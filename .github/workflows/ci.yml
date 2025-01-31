@@ -18,8 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev build-essential pkg-config zlib1g-dev
 
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
