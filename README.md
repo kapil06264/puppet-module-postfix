@@ -15,10 +15,10 @@ This module provides OS default values for these OSfamilies:
 
  * AlmaLinux 8/9
  * Debian 6/7
- * RedHat 5/6/7/8/9
+ * RedHat 8/9
  * Rocky 8/9
- * Suse 10/11/12/15
- * Ubuntu 14.04/16.04/18.04/20.04/22.04/24.04
+ * Suse 12/15
+ * Ubuntu 18.04/20.04/22.04/24.04
 
 
 

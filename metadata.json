@@ -24,9 +24,6 @@
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "5",
-        "6",
-        "7",
         "8",
         "9"
       ]
@@ -34,9 +31,6 @@
     {
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
-        "5",
-        "6",
-        "7",
         "8",
         "9"
       ]
@@ -78,8 +72,6 @@
     {
       "operatingsystem": "SLES",
       "operatingsystemrelease": [
-        "10",
-        "11",
         "12",
         "15"
       ]
@@ -96,8 +88,6 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "14.04",
-        "16.04",
         "18.04",
         "20.04",
         "22.04",
