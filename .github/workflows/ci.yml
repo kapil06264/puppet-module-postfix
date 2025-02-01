@@ -29,9 +29,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4 libcurl4-openssl-dev
 
-      - name: Install patron gem
+      - name: Update patron gem
         run: |
-          gem install patron -v 0.13.3 -- --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
+          gem install patron -v 0.15.0
 
       - name: Bundle install
         run: |
@@ -71,9 +71,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4 libcurl4-openssl-dev
 
-      - name: Install patron gem
+      - name: Update patron gem
         run: |
-          gem install patron -v 0.13.3 -- --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
+          gem install patron -v 0.15.0
 
       - name: Bundle install
         run: |
@@ -102,9 +102,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4 libcurl4-openssl-dev
 
-      - name: Install patron gem
+      - name: Update patron gem
         run: |
-          gem install patron -v 0.13.3 -- --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
+          gem install patron -v 0.15.0
 
       - name: Bundle install
         run: |
