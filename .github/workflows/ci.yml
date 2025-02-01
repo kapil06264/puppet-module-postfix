@@ -27,13 +27,16 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4
+          sudo apt-get install -y libcurl4 libcurl4-openssl-dev
+
+      - name: Install patron gem
+        run: |
+          gem install patron -v 0.13.3 -- --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
 
       - name: Bundle install
         run: |
-          bundle config build.patron --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
           bundle config set --local path 'vendor/bundle'
-          bundle install --jobs 4
+          bundle install --jobs 4 --retry 3
 
       - name: Run static validations
         run: bundle exec rake validate lint
@@ -66,13 +69,16 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4
+          sudo apt-get install -y libcurl4 libcurl4-openssl-dev
+
+      - name: Install patron gem
+        run: |
+          gem install patron -v 0.13.3 -- --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
 
       - name: Bundle install
         run: |
-          bundle config build.patron --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
           bundle config set --local path 'vendor/bundle'
-          bundle install --jobs 4
+          bundle install --jobs 4 --retry 3
 
       - name: Run tests
         run: bundle exec rake parallel_spec
@@ -94,9 +100,24 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4
+          sudo apt-get install -y libcurl4 libcurl4-openssl-dev
+
+      - name: Install patron gem
+        run: |
+          gem install patron -v 0.13.3 -- --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
 
       - name: Bundle install
         run: |
-          bundle config build.patron --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
-          bundle
+          bundle config set --local path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
+
+      - name: Provision Testing Environments
+        run: |
+          bundle exec rake 'litmus:provision_list[default]'
+          bundle exec rake 'litmus:install_agent'
+          bundle exec rake 'litmus:install_module'
+      - name: Run Tests
+        run: bundle exec rake 'litmus:acceptance:parallel'
+
+      - name: Tear Down
+        run: bundle exec rake 'litmus:tear_down'
