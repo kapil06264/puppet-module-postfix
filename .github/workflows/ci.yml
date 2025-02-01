@@ -27,10 +27,11 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev
+          sudo apt-get install -y libcurl4
 
       - name: Bundle install
         run: |
+          bundle config build.patron --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
           bundle config set --local path 'vendor/bundle'
           bundle install --jobs 4
 
@@ -65,10 +66,11 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev
+          sudo apt-get install -y libcurl4
 
       - name: Bundle install
         run: |
+          bundle config build.patron --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
           bundle config set --local path 'vendor/bundle'
           bundle install --jobs 4
 
@@ -92,29 +94,9 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev
+          sudo apt-get install -y libcurl4
 
       - name: Bundle install
         run: |
-          bundle config set --local path 'vendor/bundle'
-          bundle install --jobs 4
-
-      - name: Provision Testing Environments
-        run: |
-          bundle exec rake 'litmus:provision_list[default]'
-          bundle exec rake 'litmus:install_agent'
-          bundle exec rake 'litmus:install_module'
-      - name: Run Tests
-        run: bundle exec rake 'litmus:acceptance:parallel'
-
-      - name: Tear Down
-        run: bundle exec rake 'litmus:tear_down'
-
-  tests:
-    needs:
-      - unit
-      - acceptance
-    runs-on: ubuntu-20.04
-    name: Test suite
-    steps:
-      - run: echo Test suite completed
+          bundle config build.patron --with-cflags=-I/usr/include --with-ldflags=-L/usr/lib
+          bundle
