@@ -34,7 +34,8 @@ group :development do
   gem "rubocop-performance", '= 1.9.1',            require: false
   gem "rubocop-rspec", '= 2.0.1',                  require: false
   gem "rb-readline", '= 0.5.5',                    require: false, platforms: [:mswin, :mingw, :x64_mingw]
-  gem "github_changelog_generator", '~> 1.15',     require: false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')
+  ggem "github_changelog_generator", '1.15.2',     require: false  # Downgraded to avoid dependency issues
+  gem "patron", '< 0.13.3',                        require: false  # Pinned to a stable version
 end
 group :system_tests do
   gem "puppet_litmus", '< 1.0.0', require: false, platforms: [:ruby, :x64_mingw]
