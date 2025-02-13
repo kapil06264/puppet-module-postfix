@@ -12,3 +12,5 @@ jobs:
     needs: Spec
     uses: "puppetlabs/cat-github-actions/.github/workflows/module_acceptance.yml@main"
     secrets: inherit
+    with:
+      runner: "ubuntu-20.04"
