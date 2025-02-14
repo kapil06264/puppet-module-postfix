@@ -1,0 +1,106 @@
+Run bundle exec rake 'litmus:install_agent[puppet7-nightly]'
+  bundle exec rake 'litmus:install_agent[puppet7-nightly]'
+  shell: /usr/bin/bash -e {0}
+  env:
+    BUNDLE_WITHOUT: release_prep
+    PUPPET_GEM_VERSION: ~> 7.24
+    FACTER_GEM_VERSION: https://github.com/puppetlabs/facter#main
+install_agent
+fatal: --unshallow on a complete repository does not make sense
+HEAD is now at b9910fe2 Merge pull request #1215 from puppetlabs/release-prep
+From https://github.com/puppetlabs/provision
+ * [new tag]         v1.0.0     -> v1.0.0
+ * [new tag]         v2.0.0     -> v2.0.0
+ * [new tag]         v2.1.0     -> v2.1.0
+ * [new tag]         v2.1.1     -> v2.1.1
+ * [new tag]         v3.0.0     -> v3.0.0
+ * [new tag]         v3.0.1     -> v3.0.1
+From https://github.com/puppetlabs/puppetlabs-puppet_agent
+ * [new tag]         0.1.0      -> 0.1.0
+ * [new tag]         0.2.0      -> 0.2.0
+ * [new tag]         1.0.0      -> 1.0.0
+ * [new tag]         1.1.0      -> 1.1.0
+ * [new tag]         1.2.0      -> 1.2.0
+ * [new tag]         1.3.0      -> 1.3.0
+ * [new tag]         1.3.1      -> 1.3.1
+ * [new tag]         1.3.2      -> 1.3.2
+ * [new tag]         1.4.0      -> 1.4.0
+ * [new tag]         1.4.1      -> 1.4.1
+ * [new tag]         1.5.0      -> 1.5.0
+ * [new tag]         1.6.0      -> 1.6.0
+ * [new tag]         1.6.1      -> 1.6.1
+ * [new tag]         1.6.2      -> 1.6.2
+ * [new tag]         1.7.0      -> 1.7.0
+ * [new tag]         2.0.0      -> 2.0.0
+ * [new tag]         2.0.1      -> 2.0.1
+ * [new tag]         2.1.0      -> 2.1.0
+ * [new tag]         2.1.1      -> 2.1.1
+ * [new tag]         2.1.2      -> 2.1.2
+ * [new tag]         2.2.0      -> 2.2.0
+ * [new tag]         2.2.1      -> 2.2.1
+ * [new tag]         2.2.2      -> 2.2.2
+ * [new tag]         2.2.3      -> 2.2.3
+ * [new tag]         3.0.0      -> 3.0.0
+ * [new tag]         3.0.1      -> 3.0.1
+ * [new tag]         3.0.2      -> 3.0.2
+ * [new tag]         3.1.0      -> 3.1.0
+ * [new tag]         3.2.0      -> 3.2.0
+ * [new tag]         4.0.0      -> 4.0.0
+ * [new tag]         4.1.0      -> 4.1.0
+ * [new tag]         4.1.1      -> 4.1.1
+ * [new tag]         4.2.0      -> 4.2.0
+ * [new tag]         4.3.0      -> 4.3.0
+ * [new tag]         4.4.0      -> 4.4.0
+ * [new tag]         4.5.0      -> 4.5.0
+ * [new tag]         4.6.0      -> 4.6.0
+ * [new tag]         4.6.1      -> 4.6.1
+ * [new tag]         4.7.0      -> 4.7.0
+ * [new tag]         4.8.0      -> 4.8.0
+ * [new tag]         4.9.0      -> 4.9.0
+ * [new tag]         v4.10.0    -> v4.10.0
+ * [new tag]         v4.11.0    -> v4.11.0
+ * [new tag]         v4.12.0    -> v4.12.0
+ * [new tag]         v4.12.1    -> v4.12.1
+ * [new tag]         v4.13.0    -> v4.13.0
+ * [new tag]         v4.14.0    -> v4.14.0
+ * [new tag]         v4.15.0    -> v4.15.0
+ * [new tag]         v4.16.0    -> v4.16.0
+ * [new tag]         v4.17.0    -> v4.17.0
+ * [new tag]         v4.18.0    -> v4.18.0
+ * [new tag]         v4.19.0    -> v4.19.0
+ * [new tag]         v4.20.0    -> v4.20.0
+ * [new tag]         v4.20.1    -> v4.20.1
+ * [new tag]         v4.21.0    -> v4.21.0
+ * [new tag]         v4.22.0    -> v4.22.0
+From https://github.com/puppetlabs/puppetlabs-facts
+ * [new tag]         0.1.0      -> 0.1.0
+ * [new tag]         0.1.1      -> 0.1.1
+ * [new tag]         0.1.2      -> 0.1.2
+ * [new tag]         0.2.0      -> 0.2.0
+ * [new tag]         0.3.0      -> 0.3.0
+ * [new tag]         0.3.1      -> 0.3.1
+ * [new tag]         0.4.0      -> 0.4.0
+ * [new tag]         0.4.1      -> 0.4.1
+ * [new tag]         0.5.0      -> 0.5.0
+ * [new tag]         0.5.1      -> 0.5.1
+ * [new tag]         0.6.0      -> 0.6.0
+ * [new tag]         1.0.0      -> 1.0.0
+ * [new tag]         1.1.0      -> 1.1.0
+ * [new tag]         1.2.0      -> 1.2.0
+ * [new tag]         1.3.0      -> 1.3.0
+ * [new tag]         1.4.0      -> 1.4.0
+ * [new tag]         1.6.0      -> 1.6.0
+ * [new tag]         1.7.0      -> 1.7.0
+rake aborted!
+Installation of agent failed.
+Results:
+  ee413d5e094d: {"_output"=>"19:22:06 +0000 INFO: Version parameter not defined and no agent detected. Assuming latest.\n19:22:06 +0000 INFO: Downloading Puppet latest for el...\n19:22:06 +0000 INFO: Red hat like platform! Lets get you an RPM...\n19:22:06 +0000 INFO: Downloading https://artifactory.delivery.puppetlabs.net:443/artifactory/internal_nightly__local/yum/puppet7-nightly-release-el-8.noarch.rpm\n19:22:06 +0000 INFO:   to file /tmp/install.sh.231.5502/puppet7-nightly-release-el-8.noarch.rpm\n19:22:06 +0000 INFO: Trying curl...\n19:22:06 +0000 INFO: Retrying... [1/5]\n19:22:06 +0000 INFO: Return code: 6\n19:22:07 +0000 INFO: Retrying... [2/5]\n19:22:08 +0000 INFO: Return code: 6\n19:22:09 +0000 INFO: Retrying... [3/5]\n19:22:09 +0000 INFO: Return code: 6\n19:22:10 +0000 INFO: Retrying... [4/5]\n19:22:10 +0000 INFO: Return code: 6\n19:22:11 +0000 INFO: Retrying... [5/5]\n19:22:11 +0000 INFO: Return code: 6\n19:22:12 +0000 CRIT: Cannot download package as none of wget/curl/fetch/perl-LWP-Simple/perl-File-Fetch/python3/apt-helper is found\n19:22:12 +0000 CRIT: Unable to retrieve a valid package!\n", "_error"=>{"kind"=>"puppetlabs.tasks/task-error", "issue_code"=>"TASK_ERROR", "msg"=>"The task failed with exit code 1", "details"=>{"exit_code"=>1}}}}
+/home/runner/work/puppet-module-postfix/puppet-module-postfix/vendor/bundle/ruby/2.7.0/gems/puppet_litmus-1.6.1/lib/puppet_litmus/rake_helper.rb:332:in `raise_bolt_errors'
+/home/runner/work/puppet-module-postfix/puppet-module-postfix/vendor/bundle/ruby/2.7.0/gems/puppet_litmus-1.6.1/lib/puppet_litmus/rake_helper.rb:153:in `install_agent'
+/home/runner/work/puppet-module-postfix/puppet-module-postfix/vendor/bundle/ruby/2.7.0/gems/puppet_litmus-1.6.1/lib/puppet_litmus/rake_tasks.rb:130:in `block (2 levels) in <top (required)>'
+/home/runner/work/puppet-module-postfix/puppet-module-postfix/vendor/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/opt/hostedtoolcache/Ruby/2.7.8/x64/bin/bundle:23:in `load'
+/opt/hostedtoolcache/Ruby/2.7.8/x64/bin/bundle:23:in `<main>'
+Tasks: TOP => litmus:install_agent
+(See full trace by running task with --trace)
+Error: Process completed with exit code 1.
